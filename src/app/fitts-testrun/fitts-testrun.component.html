@@ -4,25 +4,27 @@
 
   <div class="background">
       <ion-card class="ion-card">
-          <ion-card-header>
+          <ion-card-header style="margin-bottom: 10%;">
     
             <ion-card-title style="text-align: center;">Click the circles as they appear</ion-card-title>
           </ion-card-header>
-    
-          <ion-card-content style="text-align: center;">
+          <ion-card-content style="display: inline-block; ">
               
-            <ion-item *ngFor="let detail of circleDatabase; let i = index">
-              <ion-list>
-              <h2>{{detail.ID}}</h2>
-              </ion-list>
-              </ion-item>
+              <button id="1" class="smallCircle" style="visibility: hidden; margin-left: 565px;" (click)="recalibrate()"></button>
+              <button id="2" class="smallCircle" style="visibility: hidden; margin-left: 805px;" (click)="recalibrate()"></button>
 
-              <ion-icon name="arrow-dropdown-circle" id="center" (click)="testClicks()"></ion-icon>
-              <p id="centerize">Re-calibrate</p>
+            <!-- <ion-item *ngFor="let detail of circleDatabase; let i = index">
+              <ion-list>
+              </ion-list>
+              </ion-item> -->
+              
+              <ion-icon class="calibrate" style="visibility: visible;" name="arrow-dropdown-circle" id="centerize" (click)="testClicks()"></ion-icon>
+              <p id="centerizes" style="margin-left: 705px">Re-calibrate</p>
+
 
         </ion-card-content>
 
-        <div style="margin-top: 200px; margin-left: 40%">
+        <div style="margin-top: 18%; margin-left: 35%">
         <ion-button (click)="toInst()">Back to instructions</ion-button>
         <div class="divider"></div>
         <ion-button (click)="toReal()">Take the real test</ion-button>

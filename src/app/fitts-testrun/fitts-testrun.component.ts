@@ -22,31 +22,39 @@ toReal() {
 }
 
 testClicks() {
-  var pickId = Math.floor(Math.random() * 2) + 1;
+  document.getElementById("centerize").style.visibility = "hidden";
+  document.getElementById("centerizes").style.visibility = "hidden";
 
-  var i;
-  for (i = 0; i < 5; i++) {
-    if (pickId == this.circleDatabase.ID) {
-      if (this.circleDatabase.Amount > 0) {
-      //Generate circle
-      this.circleDatabase.Amount -= 1;
-      }
-      else {
-        this.testClicks();
-      }
+  var pickId = Math.floor(Math.random() * 2) + 1;
+  var circleId = pickId.toString();
+  document.getElementById(circleId).style.visibility = "visible";
+
+  // circ.innerHTML = "circID= " pickId;
+
+//   for (i = 0; i < 5; i++) {
+//     if (pickId == this.circleDatabase.ID) {
+//       if (this.circleDatabase.Amount > 0) {
+//       //Generate circle
+//       this.circleDatabase.Amount -= 1;
+//       }
+//       else {
+//         this.testClicks();
+//       }
       
-    }
-    else {
-      this.testClicks();
-    }
-}
+//     }
+//     else {
+//       this.testClicks();
+//     }
+// }
 //Test is completed
-this.router.navigate(['/FittsTest2']);
+// this.router.navigate(['/FittsTest2']);
 }
 
 recalibrate() {
-  document.getElementById("centerize").hidden = false;
-  document.getElementById("center").hidden = false;
+  document.getElementById("centerizes").style.visibility = "visible";
+  document.getElementById("centerize").style.visibility = "visible";
+  document.getElementById("1").style.visibility = "hidden";
+  document.getElementById("2").style.visibility = "hidden";
 }
 
   ngOnInit() {}

@@ -11,16 +11,26 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FittsTestComponent } from './fitts-test/fitts-test.component';
 import { FinishComponent } from './finish/finish.component';
+import { FittsTest2Component } from './fitts-test2/fitts-test2.component';
+import { FittsTestrealComponent } from './fitts-testreal/fitts-testreal.component';
+import { FittsTestrunComponent } from './fitts-testrun/fitts-testrun.component';
+
 
 const appRoutes: Routes = [
     { path: 'FittsTest', component: FittsTestComponent },
     { path: 'Finish', component: FinishComponent},
+    { path: 'FittsTest2', component: FittsTest2Component },
+    { path: 'FittsTestRun', component: FittsTestrunComponent },
+    { path: 'FittsTestReal', component: FittsTestrealComponent },
 ];
 
 @NgModule({
   declarations: [
   AppComponent,
   FittsTestComponent,
+  FittsTest2Component,
+  FittsTestrealComponent,
+  FittsTestrunComponent,
   FinishComponent],
   entryComponents: [],
   imports: [

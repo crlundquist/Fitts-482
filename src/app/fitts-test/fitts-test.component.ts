@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fitts-test',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FittsTestComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+// --------------------- Popup alert confirmation ------------------------------------------------
+  async presentAlertConfirm() {
+    if (confirm("Save your answers and continue?")) {
+      this.router.navigate(['/FittsTest2']);
+    } else {
+
+    }
+
+  }
+  // -------------------------------------------------------------------------------------------------
 
   ngOnInit() {}
 

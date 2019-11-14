@@ -1,0 +1,28 @@
+.squish {
+    width: 40%;
+    height: 870px;
+    text-align: center;
+    margin-right: 30%;
+    margin-left: 30%;
+    overflow: auto;
+  }
+
+.background {
+    background-color: rgb(233, 233, 233);
+}
+
+.ion-card {
+    background-color: white;
+    z-index: 1;
+}
+
+h1 {
+	size: 65px;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+}
+
+.alert {
+    z-index: -1;
+    position: fixed;
+}

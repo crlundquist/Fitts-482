@@ -1,0 +1,24 @@
+<ion-header>
+    <h1 style="text-align: center;">Part 2: Fitts' Test</h1>
+  </ion-header>
+
+  <div class="background">
+      <ion-card class="ion-card" >
+          <ion-card-header>
+    
+            <ion-card-title style="text-align: center;">Instructions</ion-card-title>
+          </ion-card-header>
+    
+          <ion-card-content style="text-align: center;">
+            <p>For this section, you will be asked to click on circles as they appear <br>
+            After every circle, you will have to click in the center of the screen <br>
+          Circles will only appear to the left, or right of the center<br>
+        Even if you miss, keep trying until you click within a circle<br><br><br><br>
+        Would you like to do a test run?
+      </p>
+      <ion-button (click)="toTest()">Do a test run</ion-button>
+      <div class="divider"></div>
+      <ion-button (click)="toReal()">Take the real test</ion-button>
+          </ion-card-content>
+        </ion-card>
+    </div>

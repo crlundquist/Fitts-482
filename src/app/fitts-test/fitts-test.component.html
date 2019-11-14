@@ -1,13 +1,205 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      List
-    </ion-title>
-  </ion-toolbar>
+  <h1 style="text-align: center;">Part 1: Questions</h1>
 </ion-header>
-<p>
-  fitts-test works!
-</p>
+<div class="background">
+  <div class="squish">
+
+    <!-- ----------------------------------------------------------------------------- -->
+    <ion-card class="ion-card">
+      <ion-card-header>
+
+        <ion-card-title>What is your age?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list style="width: 40%; margin-left: 30%;">
+          <ion-radio-group>
+
+            <ion-item>
+              <ion-label>18-21</ion-label>
+              <ion-radio slot="start" value="18-21" checked></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>22-25</ion-label>
+              <ion-radio slot="start" value="22-25"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>26-29</ion-label>
+              <ion-radio slot="start" value="26-29"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>30-33</ion-label>
+              <ion-radio slot="start" value="30-33"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>34+</ion-label>
+              <ion-radio slot="start" value="34+"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <!-- -------------------------------------------------------------------------------------- -->
+    <ion-card class="ion-card">
+      <ion-card-header>
+
+        <ion-card-title>What is your gender?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list style="width: 40%; margin-left: 30%;">
+          <ion-radio-group>
+
+            <ion-item>
+              <ion-label>Male</ion-label>
+              <ion-radio slot="start" value="Male" checked></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Female</ion-label>
+              <ion-radio slot="start" value="Female"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Prefer not to say</ion-label>
+              <ion-radio slot="start" value="N/A"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <!-- --------------------------------------------------------------------------------- -->
+    <ion-card class="ion-card">
+      <ion-card-header>
+
+        <ion-card-title>On average, how often do you use a computer per day?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list style="width: 40%; margin-left: 30%;">
+          <ion-radio-group>
+
+            <ion-item>
+              <ion-label>0-1 hour</ion-label>
+              <ion-radio slot="start" value="0-1" checked></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>1-2 hours</ion-label>
+              <ion-radio slot="start" value="1-2"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>3-4 hours</ion-label>
+              <ion-radio slot="start" value="3-4"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>4-5 hours</ion-label>
+              <ion-radio slot="start" value="4-5"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>5+ hours</ion-label>
+              <ion-radio slot="start" value="5+"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <!-- ---------------------------------------------------------------------------------- -->
+    <ion-card class="ion-card">
+      <ion-card-header>
+
+        <ion-card-title>Do you primarily use a mouse or a track pad?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list style="width: 80%; margin-left: 10%;">
+          <ion-radio-group>
+
+            <ion-item>
+              <ion-label>Over 50% of computer use with a mouse (typical desktop usage)</ion-label>
+              <ion-radio slot="start" value="mouse" checked></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Over 50% of computer use with a track pad (typically in laptops)</ion-label>
+              <ion-radio slot="start" value="trackpad"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <!-- ----------------------------------------------------------------------------- -->
+    <ion-card class="ion-card">
+      <ion-card-header>
+
+        <ion-card-title>Do you have any sort of visual impairment? <br>(Use of glasses, partial blindness, or color
+          blindness)</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list style="width: 40%; margin-left: 30%;">
+          <ion-radio-group>
+
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="yes" checked></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Prefer not to say</ion-label>
+              <ion-radio slot="start" value="N/A"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <!-- ----------------------------------------------------------------------------- -->
+    <ion-card class="ion-card">
+      <ion-card-header>
+
+        <ion-card-title>Do you now, or have you ever had a condiiton that inhibits movement of the arm or wrist? <br>
+          (Example: carpal tunnel)</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list style="width: 40%; margin-left: 30%;">
+          <ion-radio-group>
+
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="yes" checked></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Prefer not to say</ion-label>
+              <ion-radio slot="start" value="N/A"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <!-- ----------------------------------------------------------------------------- -->
+    <ion-button expand="block" (click)="presentAlertConfirm()">Continue</ion-button>
+
+  </div></div>

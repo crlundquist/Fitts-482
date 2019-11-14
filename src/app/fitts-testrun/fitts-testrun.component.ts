@@ -21,13 +21,21 @@ toReal() {
   this.router.navigate(['/FittsTestReal']);
 }
 
+totalTaken = 0;
+smallLeft = 10;
 testClicks() {
   document.getElementById("centerize").style.visibility = "hidden";
   document.getElementById("centerizes").style.visibility = "hidden";
 
   var pickId = Math.floor(Math.random() * 2) + 1;
+  
   var circleId = pickId.toString();
+  if (this.totalTaken >= 320) {
+    this.router.navigate(['/FittsTest2']);
+  }
+  else if (this.smallLeft > 0) {
   document.getElementById(circleId).style.visibility = "visible";
+  };
 
   // circ.innerHTML = "circID= " pickId;
 

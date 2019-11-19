@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from "../services/data.service";
 
@@ -13,10 +13,15 @@ export class FittsTestrealComponent implements OnInit {
 
   constructor(private router: Router, private dataService: DataService) { }
 
-
+  // ---------------------------- For timer ---------------------------------------------
+  counter: number;
+  timerRef;
+  running: boolean = false;
+  startText = "Start";
+// ---------------------------------------------------------------------------------------
 
   totalTaken = 0;
-  // ---------------------- Array Set ----------------------------------------
+  // ---------------------- "Array" Set ----------------------------------------
   smallLeftShort = 10;
   smallRightShort = 10;
   smallLeftLo = 10;
@@ -50,7 +55,7 @@ export class FittsTestrealComponent implements OnInit {
   largeLeftLong = 10;
   largeRightLong = 10;
   // -------------------------------------------------------------
-
+  curentPickId = 0;
   testClicks() {
     document.getElementById("centerize").style.visibility = "hidden";
     document.getElementById("centerizes").style.visibility = "hidden";
@@ -58,232 +63,233 @@ export class FittsTestrealComponent implements OnInit {
     var prog = initialprog.toString();
     document.getElementById("progress").setAttribute("value", prog);
 
-    var pickId = Math.floor(Math.random() * 31) + 1;
+   var pickId = Math.floor(Math.random() * 31) + 1;
     var circleId = pickId.toString();
+    this.curentPickId = pickId;
     if (this.totalTaken >= 320) {
       this.router.navigate(['/Finish']);
     }
     else if (pickId == 1) {
       if (this.smallLeftShort > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 2) {
       if (this.smallRightShort > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 3) {
       if (this.smallLeftLo > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 4) {
       if (this.smallRightLo > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 5) {
       if (this.smallLeftHi > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 6) {
       if (this.smallRightHi > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 7) {
       if (this.smallLeftLong > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 8) {
       if (this.smallRightLong > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 9) {
       if (this.loLeftShort > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 10) {
       if (this.loRightShort > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 11) {
       if (this.loLeftLo > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 12) {
       if (this.loRightLo > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 13) {
       if (this.loLeftHi > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 14) {
       if (this.loRightHi > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 15) {
       if (this.loLeftLong > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 16) {
       if (this.loRightLong > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 17) {
       if (this.hiLeftShort > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 18) {
       if (this.hiRightShort > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 19) {
       if (this.hiLeftLo > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 20) {
       if (this.hiRightLo > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 21) {
       if (this.hiLeftHi > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 22) {
       if (this.hiRightHi > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 23) {
       if (this.hiLeftLong > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 24) {
       if (this.hiRightLong > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 25) {
       if (this.largeLeftShort > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 26) {
       if (this.largeRightShort > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 27) {
       if (this.largeLeftLo > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 28) {
       if (this.largeRightLo > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 29) {
       if (this.largeLeftHi > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 30) {
       if (this.largeRightHi > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 31) {
       if (this.largeLeftLong > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
     else if (pickId == 32) {
       if (this.largeRightLong > 0) {
         this.totalTaken += 1;
-        document.getElementById(circleId).style.visibility = "visible";
+        document.getElementById(circleId).style.visibility = "visible"; this.startTimer()
       }
       else { this.testClicks(); }
     }
@@ -291,6 +297,8 @@ export class FittsTestrealComponent implements OnInit {
 
 
   recalibrate() {
+    this.clearTimer();
+
     document.getElementById("centerizes").style.visibility = "visible";
     document.getElementById("centerize").style.visibility = "visible";
     document.getElementById("1").style.visibility = "hidden";
@@ -325,6 +333,34 @@ export class FittsTestrealComponent implements OnInit {
     document.getElementById("30").style.visibility = "hidden";
     document.getElementById("31").style.visibility = "hidden";
     document.getElementById("32").style.visibility = "hidden";
+  }
+
+  startTimer() {
+    
+    this.running = !this.running;
+    if (this.running) {
+      const startTime = Date.now() - (this.counter || 0);
+      this.timerRef = setInterval(() => {
+        this.counter = Date.now() - startTime;
+      });
+    } else {
+      clearInterval(this.timerRef);
+    }
+  }
+
+  clearTimer() {
+    var currentCircle = document.getElementById("CircleId").id;
+    if (this.dataService.circleDatabase.id == currentCircle)
+    {
+      this.dataService.circleDatabase.times.push(this.counter);
+    }
+    this.running = false;
+    this.counter = undefined;
+    clearInterval(this.timerRef);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.timerRef);
   }
 
   ngOnInit() { }

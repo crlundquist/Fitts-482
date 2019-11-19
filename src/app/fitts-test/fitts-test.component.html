@@ -13,37 +13,14 @@
 
       <ion-card-content>
         <ion-list style="width: 40%; margin-left: 30%;">
-          <ion-radio-group>
-
-            <ion-item>
-              <ion-label>18-21</ion-label>
-              <ion-radio slot="start" value="18-21" checked></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>22-25</ion-label>
-              <ion-radio slot="start" value="22-25"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>26-29</ion-label>
-              <ion-radio slot="start" value="26-29"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>30-33</ion-label>
-              <ion-radio slot="start" value="30-33"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>34+</ion-label>
-              <ion-radio slot="start" value="34+"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
+              
+              <input type="radio" name="ageQ" value="18-21">18-21<br>
+              <input type="radio" name="ageQ" value="22-25">22-25<br>
+              <input type="radio" name="ageQ" value="26-29">26-29<br>
+              <input type="radio" name="ageQ" value="30-33">30-33<br>
+              <input type="radio" name="ageQ" value="34+">34+
     <!-- -------------------------------------------------------------------------------------- -->
+    </ion-list></ion-card-content></ion-card>
     <ion-card class="ion-card">
       <ion-card-header>
 
@@ -52,24 +29,11 @@
 
       <ion-card-content>
         <ion-list style="width: 40%; margin-left: 30%;">
-          <ion-radio-group>
 
-            <ion-item>
-              <ion-label>Male</ion-label>
-              <ion-radio slot="start" value="Male" checked></ion-radio>
-            </ion-item>
+          <input type="radio" name="genderQ" value="Male">Male<br>
+          <input type="radio" name="genderQ" value="Female">Female<br>
+          <input type="radio" name="genderQ" value="Prefer not to say">Prefer not to say<br>
 
-            <ion-item>
-              <ion-label>Female</ion-label>
-              <ion-radio slot="start" value="Female"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>Prefer not to say</ion-label>
-              <ion-radio slot="start" value="N/A"></ion-radio>
-            </ion-item>
-
-          </ion-radio-group>
         </ion-list>
       </ion-card-content>
     </ion-card>
@@ -82,33 +46,13 @@
 
       <ion-card-content>
         <ion-list style="width: 40%; margin-left: 30%;">
-          <ion-radio-group>
 
-            <ion-item>
-              <ion-label>0-1 hour</ion-label>
-              <ion-radio slot="start" value="0-1" checked></ion-radio>
-            </ion-item>
+          <input type="radio" name="freqQ" value="0-1 hour">0-1 hour<br>
+          <input type="radio" name="freqQ" value="1-2 hours">1-2 hours<br>
+          <input type="radio" name="freqQ" value="3-4 hours">3-4 hours<br>
+          <input type="radio" name="freqQ" value="4-5 hours">4-5 hours<br>
+          <input type="radio" name="freqQ" value="5+ hours">5+ hours
 
-            <ion-item>
-              <ion-label>1-2 hours</ion-label>
-              <ion-radio slot="start" value="1-2"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>3-4 hours</ion-label>
-              <ion-radio slot="start" value="3-4"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>4-5 hours</ion-label>
-              <ion-radio slot="start" value="4-5"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>5+ hours</ion-label>
-              <ion-radio slot="start" value="5+"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
         </ion-list>
       </ion-card-content>
     </ion-card>
@@ -121,19 +65,10 @@
 
       <ion-card-content>
         <ion-list style="width: 80%; margin-left: 10%;">
-          <ion-radio-group>
 
-            <ion-item>
-              <ion-label>Over 50% of computer use with a mouse (typical desktop usage)</ion-label>
-              <ion-radio slot="start" value="mouse" checked></ion-radio>
-            </ion-item>
+          <input type="radio" name="mouseQ" value="mouse">Over 50% of computer use with a mouse<br>
+          <input type="radio" name="mouseQ" value="trackpad">Over 50% of computer use with a track pad
 
-            <ion-item>
-              <ion-label>Over 50% of computer use with a track pad (typically in laptops)</ion-label>
-              <ion-radio slot="start" value="trackpad"></ion-radio>
-            </ion-item>
-
-          </ion-radio-group>
         </ion-list>
       </ion-card-content>
     </ion-card>
@@ -147,24 +82,11 @@
 
       <ion-card-content>
         <ion-list style="width: 40%; margin-left: 30%;">
-          <ion-radio-group>
 
-            <ion-item>
-              <ion-label>Yes</ion-label>
-              <ion-radio slot="start" value="yes" checked></ion-radio>
-            </ion-item>
+          <input type="radio" name="impairQ" value="yes">Yes<br>
+          <input type="radio" name="impairQ" value="no">No<br>
+          <input type="radio" name="impairQ" value="prefer not to answer">Prefer not to answer<br>
 
-            <ion-item>
-              <ion-label>No</ion-label>
-              <ion-radio slot="start" value="no"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>Prefer not to say</ion-label>
-              <ion-radio slot="start" value="N/A"></ion-radio>
-            </ion-item>
-
-          </ion-radio-group>
         </ion-list>
       </ion-card-content>
     </ion-card>
@@ -178,28 +100,15 @@
 
       <ion-card-content>
         <ion-list style="width: 40%; margin-left: 30%;">
-          <ion-radio-group>
 
-            <ion-item>
-              <ion-label>Yes</ion-label>
-              <ion-radio slot="start" value="yes" checked></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>No</ion-label>
-              <ion-radio slot="start" value="no"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>Prefer not to say</ion-label>
-              <ion-radio slot="start" value="N/A"></ion-radio>
-            </ion-item>
-
-          </ion-radio-group>
+          <input type="radio" name="condQ" value="yes">Yes<br>
+          <input type="radio" name="condQ" value="no">No<br>
+          <input type="radio" name="condQ" value="prefer not to say">Prefer not to say<br>
+          
         </ion-list>
       </ion-card-content>
     </ion-card>
     <!-- ----------------------------------------------------------------------------- -->
     <ion-button expand="block" (click)="presentAlertConfirm()">Continue</ion-button>
 
-  </div></div>
+  

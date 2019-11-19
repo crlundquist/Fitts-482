@@ -82,6 +82,7 @@ csvOptions = {
   newCursorY = 0;
 
   testClicks() {
+    this.errorCount -= 1;
     this.getCoords(event);
     document.getElementById("centerize").style.visibility = "hidden";
     document.getElementById("centerizes").style.visibility = "hidden";
@@ -92,7 +93,7 @@ csvOptions = {
    var pickId = Math.floor(Math.random() * 31) + 1;
     var circleId = pickId.toString();
     this.curentPickId = pickId;
-    if (this.totalTaken >= 3) {
+    if (this.totalTaken >= 320) {
       this.router.navigate(['/Finish']);
       this.downloadCSV();
     }
@@ -355,7 +356,7 @@ csvOptions = {
 
 
   recalibrate() {
-    // this.errorCount -= 1;
+    this.errorCount -= 1;
     this.clearTimer();
     this.setCoords(event);
 
@@ -423,12 +424,13 @@ setCoords(event) {
 }
 
   clearTimer() {
-    if (this.errorCount > 2) {
-    this.errorCount -= 1;}
-    else if (this.errorCount == 2) 
-    { this.errorCount -= 2;}
-  
-    this.distanceBetween = Math.sqrt((this.newCursorX - this.oldCursorX)*(this.newCursorX - this.oldCursorX) + (this.newCursorY - this.oldCursorY) * (this.newCursorY - this.oldCursorY));
+    // if (this.errorCount > 2) {
+    // this.errorCount -= 1;}
+    // else if (this.errorCount == 2) 
+    // { this.errorCount -= 2;}
+  var x2 = (this.newCursorX - this.oldCursorX)*(this.newCursorX - this.oldCursorX);
+  var y2 = (this.newCursorY - this.oldCursorY) * (this.newCursorY - this.oldCursorY);
+    this.distanceBetween = Math.sqrt(x2 + y2);
     if (this.curentPickId == 1) {
       this.csvData.push({"Distance_From_Center":"360", "Size":"120", "Direction":"Left", "Times":this.counter, "Errors":this.errorCount, "Distance_Travelled":this.distanceBetween});
     }

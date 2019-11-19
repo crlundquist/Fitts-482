@@ -82,6 +82,7 @@ csvOptions = {
   newCursorY = 0;
 
   testClicks() {
+    this.getCoords(event);
     document.getElementById("centerize").style.visibility = "hidden";
     document.getElementById("centerizes").style.visibility = "hidden";
     var initialprog = 0.0031152648 * this.totalTaken;
@@ -356,6 +357,7 @@ csvOptions = {
   recalibrate() {
     // this.errorCount -= 1;
     this.clearTimer();
+    this.setCoords(event);
 
     document.getElementById("centerizes").style.visibility = "visible";
     document.getElementById("centerize").style.visibility = "visible";
@@ -394,14 +396,7 @@ csvOptions = {
   }
 
   startTimer() {
-    var theCursorX;
-    var theCursorY;
-    function getCoords(e){
-      theCursorX = e.pageX;
-      theCursorY = e.pageY;
-    }
-    this.oldCursorX = theCursorX;
-    this.oldCursorY = theCursorY;
+
     this.running = !this.running;
     if (this.running) {
       const startTime = Date.now() - (this.counter || 0);
@@ -413,17 +408,26 @@ csvOptions = {
     }
   }
 
+getCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  this.oldCursorX = x;
+  this.oldCursorY = y;
+}
+
+setCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  this.newCursorX = x;
+  this.newCursorY = y;
+}
+
   clearTimer() {
-    if (this.errorCount >= 2) {
-    this.errorCount -= 2;}
-    var theCursorX;
-    var theCursorY;
-    function getCoords(e){
-      theCursorX = e.pageX;
-      theCursorY = e.pageY;
-    }
-    this.newCursorX = theCursorX;
-    this.newCursorY = theCursorY;
+    if (this.errorCount > 2) {
+    this.errorCount -= 1;}
+    else if (this.errorCount == 2) 
+    { this.errorCount -= 2;}
+  
     this.distanceBetween = Math.sqrt((this.newCursorX - this.oldCursorX)*(this.newCursorX - this.oldCursorX) + (this.newCursorY - this.oldCursorY) * (this.newCursorY - this.oldCursorY));
     if (this.curentPickId == 1) {
       this.csvData.push({"Distance_From_Center":"360", "Size":"120", "Direction":"Left", "Times":this.counter, "Errors":this.errorCount, "Distance_Travelled":this.distanceBetween});

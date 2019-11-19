@@ -6,6 +6,7 @@ This program presents a Fitts' Law test to users and exports their data to CSV f
 
 
 How to run:
+
     - Open terminal in IDE and run the following commands:
         - npm install -g @angular/cli
         - npm install ionic

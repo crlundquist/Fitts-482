@@ -2,13 +2,14 @@
   <h1 style="text-align: center;">Part 3: The Fitts' Test</h1>
 </ion-header>
 
-<div class="background">
-    <ion-card class="ion-card">
-        <ion-card-header >
+<div class="background" (click)="errorClick()">
+    <ion-card class="ion-card" >
+        <ion-card-header>
   
           <ion-card-title style="text-align: center;">Click the recalibrate button to begin <br> The test will finish automatically when the progress bar at the bottom is filled</ion-card-title>
         </ion-card-header>
         <ion-card-content style="display: inline-block; ">
+          
             
             <button id="1" class="smallCircle" style="visibility: hidden; margin-left: 325px;" (click)="recalibrate()"></button> <!--360left-->
             <button id="2" class="smallCircle" style="visibility: hidden; margin-left: 1045px;" (click)="recalibrate()"></button> <!--360right-->

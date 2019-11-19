@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../services/data.service";
+import { AngularCsv } from 'angular7-csv/dist/Angular-csv';
 
 @Component({
   selector: 'app-finish',

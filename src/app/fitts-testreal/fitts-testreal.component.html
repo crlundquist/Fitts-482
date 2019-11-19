@@ -1,24 +1,61 @@
 <ion-header>
-    <h1 style="text-align: center;">Part 2: Fitts' Test</h1>
-  </ion-header>
+  <h1 style="text-align: center;">Part 3: The Fitts' Test</h1>
+</ion-header>
 
-  <div class="background">
-      <ion-card class="ion-card" >
-          <ion-card-header>
-    
-            <ion-card-title style="text-align: center;">Instructions</ion-card-title>
-          </ion-card-header>
-    
-          <ion-card-content style="text-align: center;">
-            <p>For this section, you will be asked to click on circles as they appear <br>
-            After every circle, you will have to click in the center of the screen <br>
-          Circles will only appear to the left, or right of the center<br>
-        Even if you miss, keep trying until you click within a circle<br><br><br><br>
-        Would you like to do a test run?
-      </p>
-      <ion-button (click)="toTest()">Do a test run</ion-button>
-      <div class="divider"></div>
-      <ion-button (click)="toReal()">Take the real test</ion-button>
-          </ion-card-content>
-        </ion-card>
-    </div>
+<div class="background">
+    <ion-card class="ion-card">
+        <ion-card-header >
+  
+          <ion-card-title style="text-align: center;">Click the recalibrate button to begin <br> The test will finish automatically when the progress bar at the bottom is filled</ion-card-title>
+        </ion-card-header>
+        <ion-card-content style="display: inline-block; ">
+            
+            <button id="1" class="smallCircle" style="visibility: hidden; margin-left: 325px;" (click)="recalibrate()"></button> <!--360left-->
+            <button id="2" class="smallCircle" style="visibility: hidden; margin-left: 1045px;" (click)="recalibrate()"></button> <!--360right-->
+            <button id="3" class="smallCircle" style="visibility: hidden; margin-left: 205px;" (click)="recalibrate()"></button> <!--480left-->
+            <button id="4" class="smallCircle" style="visibility: hidden; margin-left: 1165px;" (click)="recalibrate()"></button> <!--480right-->
+            <button id="5" class="smallCircle" style="visibility: hidden; margin-left: 85px;" (click)="recalibrate()"></button> <!--600left-->
+            <button id="6" class="smallCircle" style="visibility: hidden; margin-left: 1285px;" (click)="recalibrate()"></button> <!--600right-->
+            <button id="7" class="smallCircle" style="visibility: hidden; margin-left: -65px;" (click)="recalibrate()"></button> <!--720left-->
+            <button id="8" class="smallCircle" style="visibility: hidden; margin-left: 1405px;" (click)="recalibrate()"></button> <!--720right-->
+
+            <button id="9" class="loCircle" style="visibility: hidden; margin-left: 325px;" (click)="recalibrate()"></button> <!--360left-->
+            <button id="10" class="loCircle" style="visibility: hidden; margin-left: 1045px;" (click)="recalibrate()"></button> <!--360right-->
+            <button id="11" class="loCircle" style="visibility: hidden; margin-left: 205px;" (click)="recalibrate()"></button> <!--480left-->
+            <button id="12" class="loCircle" style="visibility: hidden; margin-left: 1165px;" (click)="recalibrate()"></button> <!--480right-->
+            <button id="13" class="loCircle" style="visibility: hidden; margin-left: 85px;" (click)="recalibrate()"></button> <!--600left-->
+            <button id="14" class="loCircle" style="visibility: hidden; margin-left: 1285px;" (click)="recalibrate()"></button> <!--600right-->
+            <button id="15" class="loCircle" style="visibility: hidden; margin-left: -65px;" (click)="recalibrate()"></button> <!--720left-->
+            <button id="16" class="loCircle" style="visibility: hidden; margin-left: 1405px;" (click)="recalibrate()"></button> <!--720right-->
+
+            <button id="17" class="hiCircle" style="visibility: hidden; margin-left: 325px;" (click)="recalibrate()"></button> <!--360left-->
+            <button id="18" class="hiCircle" style="visibility: hidden; margin-left: 1045px;" (click)="recalibrate()"></button> <!--360right-->
+            <button id="19" class="hiCircle" style="visibility: hidden; margin-left: 205px;" (click)="recalibrate()"></button> <!--480left-->
+            <button id="20" class="hiCircle" style="visibility: hidden; margin-left: 1165px;" (click)="recalibrate()"></button> <!--480right-->
+            <button id="21" class="hiCircle" style="visibility: hidden; margin-left: 85px;" (click)="recalibrate()"></button> <!--600left-->
+            <button id="22" class="hiCircle" style="visibility: hidden; margin-left: 1285px;" (click)="recalibrate()"></button> <!--600right-->
+            <button id="23" class="hiCircle" style="visibility: hidden; margin-left: -65px;" (click)="recalibrate()"></button> <!--720left-->
+            <button id="24" class="hiCircle" style="visibility: hidden; margin-left: 1405px;" (click)="recalibrate()"></button> <!--720right-->
+
+            <button id="25" class="largeCircle" style="visibility: hidden; margin-left: 325px;" (click)="recalibrate()"></button> <!--360left-->
+            <button id="26" class="largeCircle" style="visibility: hidden; margin-left: 1045px;" (click)="recalibrate()"></button> <!--360right-->
+            <button id="27" class="largeCircle" style="visibility: hidden; margin-left: 205px;" (click)="recalibrate()"></button> <!--480left-->
+            <button id="28" class="largeCircle" style="visibility: hidden; margin-left: 1165px;" (click)="recalibrate()"></button> <!--480right-->
+            <button id="29" class="largeCircle" style="visibility: hidden; margin-left: 85px;" (click)="recalibrate()"></button> <!--600left-->
+            <button id="30" class="largeCircle" style="visibility: hidden; margin-left: 1285px;" (click)="recalibrate()"></button> <!--600right-->
+            <button id="31" class="largeCircle" style="visibility: hidden; margin-left: -65px;" (click)="recalibrate()"></button> <!--720left-->
+            <button id="32" class="largeCircle" style="visibility: hidden; margin-left: 1405px;" (click)="recalibrate()"></button> <!--720right-->
+
+     
+            
+            <ion-icon class="calibrate" style="visibility: visible;" name="arrow-dropdown-circle" id="centerize" (click)="testClicks()"></ion-icon>
+            <p id="centerizes" style="margin-left: 705px; margin-top:220px">Re-calibrate</p>
+
+
+      </ion-card-content>
+
+      <div style="margin-top: 280px">
+        <ion-progress-bar id="progress" color="success" value="0"></ion-progress-bar>
+      </div>
+      </ion-card>
+  </div>

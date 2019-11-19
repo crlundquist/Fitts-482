@@ -14,3 +14,7 @@ How to run:
 
     - Type the following in terminal:
         - ionic serve
+
+
+Contributers:
+- Kootaws Yang (kootaws.yang@mnsu.edu)

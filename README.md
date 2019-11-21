@@ -7,6 +7,9 @@ This program presents a Fitts' Law test to users and exports their data to CSV f
 
 How to run:
 
+	- Install NodeJS (If you don't already have it)
+		- Restart IDE
+
     - Open terminal in IDE and run the following commands:
         - npm install -g @angular/cli
         - npm install ionic
